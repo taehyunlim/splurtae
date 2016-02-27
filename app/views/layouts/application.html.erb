@@ -29,8 +29,20 @@
   <hr />
   <br class="clear" />
 
+  <div class="container">
+    <%= yield %>
+  </div>
 
-<%= yield %>
+  <div class="footer">
+    <div class="container">
+      <div class="col-xs-6">
+        <%= link_to "This isn't enough, I need more", "#", class: 'next-quote' %>
+      </div>
+      <div class="col-xs-6 footer-blurb">
+        Proudly built by <a href="http://tfp-tae-lim-splash-page.appspot.com/" target="_blank">Tae Lim</a><br />
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
