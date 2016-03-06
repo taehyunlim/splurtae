@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <div class="col-xs-3 col-sm-2 col-md-2">
+    <div class="col-xs-3">
       <%= link_to root_path, class: 'logo' do %>
         <div class="circle">
           <br />
@@ -20,13 +20,15 @@
         </div>
       <% end %>
     </div>
-    <div class="col-xs-4 col-sm-6 col-md-6 slogan">
+    <div class="hidden-xs col-sm-4 slogan">
       Splurting out unsolicited advice about entrepreneurship since 2016
     </div>
-    <div class="col-xs-5 col-sm-4 col-md-4 links">
+    <div class="col-xs-8 col-xs-offset-1 col-sm-5 col-sm-offset-0 links">
           <!-- Button trigger modal -->
       <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
+      &nbsp;&nbsp;&nbsp;
       <%= link_to 'About', about_path %>
+      &nbsp;&nbsp;&nbsp;
     </div>
   </header>
 
@@ -40,8 +42,9 @@
         </div>
         <%= simple_form_for Quote.new do |f| %>
           <div class="modal-body">
-            <%= f.input :saying %>
-            <%= f.input :author %>
+            <%= f.input :saying, label: "What is the saying you want to add?", placeholder: "Fear is the disease. Hustle is the antidote." %>
+            <br />
+            <%= f.input :author, label: "Who is the author of the quote?", hint: "Please enter a name.", placeholder: 'Travis Kalanick' %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -69,15 +72,24 @@
 
   <div class="footer">
     <div class="container">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-sm-8">
         <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
       </div>
-      <div class="col-xs-6 footer-blurb">
-        Proudly built by <a href="http://tfp-tae-lim-splash-page.appspot.com/" target="_blank">Tae Lim</a><br />
+      <div class="col-xs-12 col-sm-4 footer-blurb">
+        Proudly built by <a href="http://tfp-tae-lim-splash-page.appspot.com/" target="_blank">Tae Lim</a>
+      <div class="footer-blurb2">
+        © 2016 Splurtae | All Rights Reserved.
+      </div>
       </div>
     </div>
   </div>
 
 </body>
 </html>
+
+
+
+
+
+
 
